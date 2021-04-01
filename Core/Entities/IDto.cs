@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Linq;
 
-namespace Entities.Abstract
+namespace Core.Entities
 {
-    public interface ICar
+    public interface IDto
     {
-
     }
 }
