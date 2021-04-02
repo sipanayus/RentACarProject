@@ -5,15 +5,9 @@ using System.Linq;
 
 namespace Core.Entities
 {
-    public interface ICar
+    public interface IEntity
     {
 
     }
 }
 
-namespace Core
-{
-    public interface IDto
-    {
-    }
-}
