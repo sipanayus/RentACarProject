@@ -29,6 +29,6 @@ namespace Business.Constants
         public static string ColorUpdated = "Renk güncellemesi başarılı";
         public static string MaintenanceTime="Sistem bakımda";
         public static string ColorRetrieved="Renk Id'si";
-       
+        public static string DailyPriceInvalid="Geçersiz fiyat";
     }
 }

@@ -1,9 +1,12 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +23,10 @@ namespace Business.Concrete
 
         public IResult Add(Car car)
         {
+            
+            ValidationTool.Validate(new CarValidator(), car);
+
+
             _carDal.Add(car);
             return new SuccessResult(Messages.CarAdded);
            
@@ -53,17 +60,17 @@ namespace Business.Concrete
             return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails());
         }
 
-        public IDataResult<List<Car>> GetCarsByBrandId(int id)
-        {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.BrandId ==id));
-        }
+        //public IDataResult<List<Car>> GetCarsByBrandId(int id)
+        //{
+        //    return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.BrandId ==id));
+        //}
 
 
-        public IDataResult<List<Car>> GetCarsByColorId(int id)
+        //public IDataResult<List<Car>> GetCarsByColorId(int id)
 
-        {
-            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c=>c.ColorId==id));
-        }
+        //{
+        //    return new SuccessDataResult<List<Car>>(_carDal.GetAll(c=>c.ColorId==id));
+        //}
 
         public IResult Update(Car car)
         {
