@@ -30,5 +30,12 @@ namespace Business.Constants
         public static string MaintenanceTime="Sistem bakımda";
         public static string ColorRetrieved="Renk Id'si";
         public static string DailyPriceInvalid="Geçersiz fiyat";
+        public static string CarImageListed="Araba resim Id'leri listelendi";
+
+        //CarImageMessages
+        public static string ImageAdded = "başarılı";
+        public static string ImageListed = "listelendi";
+        public static string ImageCountExceded = "limit aşıldı";
+
     }
 }

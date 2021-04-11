@@ -34,10 +34,13 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
-        //public Car Get(Expression<Func<Car, bool>> filter)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public TEntity Get(Expression<Func<TEntity, bool>> filter)
+        {
+            using (TContext context = new TContext())
+            {
+                return context.Set<TEntity>().SingleOrDefault(filter);
+            }
+        }
 
         public List<TEntity> GetAll(Expression<Func<TEntity, bool>> filter = null)
         {
