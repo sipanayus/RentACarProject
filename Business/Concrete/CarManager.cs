@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.CrossCuttingConcerns.Validation;
@@ -21,6 +22,7 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
+        [SecuredOperation("car,add,admin")]
         public IResult Add(Car car)
         {
             
@@ -39,6 +41,7 @@ namespace Business.Concrete
            
         }
 
+        
         public IDataResult<List<Car>> GetAll()
         {
             if (DateTime.Now.Hour == 17)
